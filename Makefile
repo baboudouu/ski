@@ -1,4 +1,4 @@
-SOURCES =	main.cpp sdlglutils.cpp slope.c
+SOURCES =	main.cpp sdlglutils.cpp slope.c skiman.cpp
 OBJECTS	=	$(SOURCES:.cpp=.o)
 TARGET	=	ski
 LIBS	=	$(shell sdl-config --libs) -lGL -lGLU  -lSDL_image
