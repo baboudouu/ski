@@ -11,6 +11,6 @@ class Skiman
 		float x;
 		float y;
 		float z;
-}
+};
 
 #endif
