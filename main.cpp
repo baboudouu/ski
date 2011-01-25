@@ -26,12 +26,6 @@ int main(int argc, char * argv[])
 	//heure actuelle, derniere mise à jour
 	Uint32 last_time = SDL_GetTicks();
 	Uint32 current_time;
-	
-	//quadrique
-	GLUquadricObj * quad1 = gluNewQuadric();
-	
-	//skiman
-	Skiman * skiman;
 
 	// Initialize SDL
 	SDL_Init(SDL_INIT_VIDEO);
@@ -46,19 +40,10 @@ int main(int argc, char * argv[])
 	gluPerspective (70, (double) WIDTH / HEIGHT, 0.5, 1000);
 	SDL_Flip(ecran);
 	glEnable(GL_TEXTURE_2D);
-	GLuint texture_snow = loadTexture("images/snow.jpg");
-	GLuint texture_face = loadTexture("images/face.jpg");
-	GLuint texture_clothes = loadTexture("images/clothes.jpg");
-	GLuint texture_sleeve = loadTexture("images/sleeve.jpg");
-	GLuint texture_tree = loadTexture("images/sleeve.jpg");
-	GLuint texture_snowhead = loadTexture("images/snowhead.jpg");
-	GLuint texture_snowbody = loadTexture("images/snowbody.jpg");
 
 	// Boucle d'évènements
 	SDL_Event event;
 	SDL_EnableKeyRepeat(10,10);
-	
-	skiman = new Skiman(0, 0, 0, quad1, texture_face, texture_clothes, texture_sleeve, texture_snow);
 	
 	continuer = true;
 	while (continuer)
@@ -121,14 +106,6 @@ int main(int argc, char * argv[])
 			current_time = SDL_GetTicks();
 		}
 		last_time = SDL_GetTicks();
-		
-		
-		//~ skiman->draw();
-		//~ Tree * arbre = new Tree(quad1, texture_tree);
-		//~ arbre->draw(0, 0, 0, 1);
-		//~ arbre->draw(1.2, 0, 1.2, 0.5);
-		Snowman * bonhomme = new Snowman(quad1, texture_snowhead, texture_snowbody);
-		bonhomme->draw(0, 0, 0, 1);
 		
 		
 		if (keystates [SDLK_l])

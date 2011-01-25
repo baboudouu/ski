@@ -53,3 +53,32 @@ void Snowman::draw(float x, float y, float z, float size)
 Snowman::~Snowman()
 {
 }
+
+Snowman * snowman_make(const char * snowman_name)
+{
+	if(strcmp(snowman_name, 'snowman1') == 0){
+	}else{
+		return null;
+	}
+	
+	return new Snowman(quad1, texture_snowhead, texture_snowbody);
+}
+
+
+//builder
+
+GLuint make_texture_snowhead = loadTexture("images/snowhead.jpg");
+GLuint make_texture_snowbody = loadTexture("images/snowbody.jpg");
+GLUquadricObj * make_quad = gluNewQuadric();
+
+Snowman * snowman_make(const char * snowman_name)
+{
+	if(strcmp(snowman_name, 's1') == 0){
+		GLuint snowhead  = make_texture_snowhead;
+		GLuint snowbody  = make_texture_snowbody;
+	}else{
+		return null;
+	}
+	
+	return new Snowman(make_quad, snowhead, snowbody);
+}

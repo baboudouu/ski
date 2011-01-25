@@ -281,3 +281,20 @@ void Tree::draw(float x, float y, float z, float size)
 Tree::~Tree()
 {
 }
+
+
+//builder
+
+GLuint make_texture_tree = loadTexture("images/sleeve.jpg");
+GLUquadricObj * make_quad = gluNewQuadric();
+
+Snowman * snowman_make(const char * snowman_name)
+{
+	if(strcmp(snowman_name, 's1') == 0){
+		GLuint tree  = make_texture_tree;
+	}else{
+		return null;
+	}
+	
+	return new Tree(make_quad, tree);
+}

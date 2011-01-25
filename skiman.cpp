@@ -1,3 +1,4 @@
+#include <string.h>
 #include "skiman.h"
 
 #define POSITION_INIT 0
@@ -508,4 +509,27 @@ void Skiman::fall()
 
 Skiman::~Skiman()
 {
+}
+
+
+//builder
+
+GLuint make_texture_face = loadTexture("images/face.jpg");
+GLuint make_texture_clothes = loadTexture("images/clothes.jpg");
+GLuint make_texture_sleeve = loadTexture("images/sleeve.jpg");
+GLuint make_texture_snow = loadTexture("images/snow.jpg");
+GLUquadricObj * make_quad = gluNewQuadric();
+
+Skiman * skiman_make(const char * skiman_name)
+{
+	if(strcmp(skiman_name, 'hero') == 0){
+		GLuint face = make_texture_face;
+		GLuint clothes = make_texture_clothes;
+		GLuint sleeve = make_texture_sleeve;
+		GLuint snow = make_texture_snow;
+	}else{
+		return null;
+	}
+	
+	return new Skiman(0, 0, 0, make_quad, face, clothes, sleeve, snow);
 }
